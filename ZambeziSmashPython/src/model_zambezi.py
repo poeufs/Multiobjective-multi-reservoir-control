@@ -99,7 +99,7 @@ class ModelZambezi:
         # "irrigation" policies. While the former is meant to be a generic
         # approximator such as RBF and ANN (to be optimized) the latter
         # has a simple structure specified in the
-        # alternative_policy_structures script. Firstly, a Policy object is
+        # alternative__tructures script. Firstly, a Policy object is
         # instantiated which is meant to own all policy functions within a
         # model (see the documentation of SMASH). Then, two separate policies
         # are added onto the overarching_policy.
