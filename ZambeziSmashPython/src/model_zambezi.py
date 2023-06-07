@@ -31,7 +31,7 @@ class ModelZambezi:
         as well as policy function hyper-parameters.
         """
 
-        self.read_settings_file("../settings/settings_file.xlsx")
+        self.read_settings_file("..ZambeziSmashPython/settings/settings_file.xlsx")
     
         self.catchments = dict()
         for name in self.catchment_names:
