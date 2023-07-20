@@ -30,8 +30,9 @@ class ModelZambezi:
         model run configuration from settings, input data (flows etc.)
         as well as policy function hyper-parameters.
         """
-
-        self.read_settings_file("..ZambeziSmashPython/settings/settings_file.xlsx")
+        #C:\Users\dakoluk\Documents\Multiobjective-multi-reservoir-control\ZambeziSmashPython\settings\settings_file.xlsx
+        self.read_settings_file("../settings/settings_file.xlsx")
+        #self.read_settings_file("..ZambeziSmashPython/settings/settings_file.xlsx")
     
         self.catchments = dict()
         for name in self.catchment_names:

@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
-
+import os
+#C:\Users\dakoluk\Documents\Multiobjective-multi-reservoir-control\ZambeziSmashPython\data\qKafueFlats_1January1974_31Dec2005.txt
+#C:\Users\dakoluk\Documents\Multiobjective-multi-reservoir-control\ZambeziSmashPython\data\qKafueFlats_1January2020_31Dec2100.txt
+#os.chdir('../data')
 data=np.loadtxt('qKafueFlats_1January2020_31Dec2100.txt')
 fontsize=30
 n_months=12
