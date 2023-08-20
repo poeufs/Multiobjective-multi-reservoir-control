@@ -1,14 +1,8 @@
 # Model class
 
-
 # Importing libraries for functionality
 import numpy as np
 import pandas as pd
-from numpy import ndarray
-
-#new
-#import os
-
 
 # Importing classes to generate the model
 from reservoir import Reservoir
@@ -16,12 +10,6 @@ from catchment import Catchment
 from irrigation_district import IrrigationDistrict
 from hydropower_plant import HydropowerPlant
 from smash import Policy
-
-#reading attempts
-#settings = pd.read_excel("../settings/settings_file.xlsx")
-#print(settings)
-
-
 
 class ModelZambezi:
     """
@@ -33,7 +21,6 @@ class ModelZambezi:
     handles the state transformation via mass-balance equation
     calculations iteratively.
     """
-    qDelta: ndarray
 
     def __init__(self):
         """
@@ -43,10 +30,10 @@ class ModelZambezi:
         model run configuration from settings, input data (flows etc.)
         as well as policy function hyper-parameters.
         """
-
-        #old
+        #C:\Users\dakoluk\Documents\Multiobjective-multi-reservoir-control\ZambeziSmashPython\settings\settings_file.xlsx
         self.read_settings_file("../settings/settings_file.xlsx")
-
+        #self.read_settings_file("..ZambeziSmashPython/settings/settings_file.xlsx")
+    
         self.catchments = dict()
         for name in self.catchment_names:
             new_catchment = Catchment(name, self)
@@ -113,7 +100,7 @@ class ModelZambezi:
         # "irrigation" policies. While the former is meant to be a generic
         # approximator such as RBF and ANN (to be optimized) the latter
         # has a simple structure specified in the
-        # alternative_policy_structures script. Firstly, a Policy object is
+        # alternative__tructures script. Firstly, a Policy object is
         # instantiated which is meant to own all policy functions within a
         # model (see the documentation of SMASH). Then, two separate policies
         # are added onto the overarching_policy.
