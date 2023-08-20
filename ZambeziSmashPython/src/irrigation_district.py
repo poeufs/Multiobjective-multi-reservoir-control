@@ -10,6 +10,7 @@ class IrrigationDistrict:
     ----------
     name : str
         Lowercase non-spaced name of the district
+        Correction: number of irrigation district
     demand : np.array
         m3
         Vector of water demand from the district throughout the

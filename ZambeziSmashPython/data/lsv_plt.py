@@ -13,3 +13,4 @@ storage_ka=dataka[2,:]
 #plt.plot(level,storage)
 plt.plot(level_ka,storage_ka)
 plt.show()
+

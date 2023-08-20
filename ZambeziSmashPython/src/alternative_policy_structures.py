@@ -2,8 +2,19 @@
 import numpy as np
 
 class irrigation_policy:
+    """irrigation policy class represents different irrigation policies"""
 
     def __init__(self, n_inputs, n_outputs, kw_dict):
+        """
+        The constructor initializes the irrigation policy classes with a number of inputs (n_inputs), a number of outputs (n_outputs)
+        and information from the keyword dictionary (kw_dict) on the number of irrigation districts stored in self.I
+
+        Parameters
+        ----------
+        n_inputs
+        n_outputs
+        kw_dict
+        """
         self.n_inputs = n_inputs
         self.n_outputs = n_outputs
         self.I = kw_dict['n_irr_districts']
@@ -18,6 +29,17 @@ class irrigation_policy:
         self.irr_parab_param = np.empty(0)
 
     def get_output(self, input):
+        """ 
+
+        Parameters
+        ----------
+        self
+        input
+
+        Returns
+        -------
+
+        """
         input_inflow, input_w, irr_district, irr_district_idx = tuple(input)
         y = float()
         hdg, hdg_dn, m = tuple(3 * [float()])

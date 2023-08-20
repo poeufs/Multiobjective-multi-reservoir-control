@@ -18,10 +18,10 @@ class Reservoir:
         Vectors of water level versus corresponding discharge
     level_to_storage_rel : np.array (2x...)
         (unit) xUnit -> yUnit
-        Vectors of water level versus corresponding water storage
+        Vectors of water level versus corresponding water storage (water level to storage relation)
     level_to_surface_rel : np.array (2x...)
         (unit) xUnit -> yUnit
-        Vectors of water level versus corresponding surface area
+        Vectors of water level versus corresponding surface area (water level to surface area relation)
     average_cross_section : float
         m2
         Average cross section of the reservoir. Used for approximation
@@ -31,7 +31,7 @@ class Reservoir:
         Initial volume of water in the reservoir
     target_hydropower_production : np.array (12x1)
         TWh(?)
-        Target hydropower production from the dam
+        Target hydropower production from the dam (per month?)
     storage_vector : np.array (1xH)
         m3
         A vector that holds the volume of the water body in the reservoir
@@ -48,10 +48,13 @@ class Reservoir:
     Methods
     -------
     storage_to_level(h=float)
+        (input = water storage volume, output = water level height)
         Returns the level(height) based on volume
     level_to_storage(s=float)
+        (input = water level height, output = water storage volume)
         Returns the volume based on level(height)
     level_to_surface(h=float)
+        (input = water level height, output = water surface area)
         Returns the surface area based on level
     integration()
         FILL IN LATER!!!!

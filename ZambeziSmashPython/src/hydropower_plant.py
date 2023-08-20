@@ -3,9 +3,18 @@
 from scipy.constants import gravitational_constant
 
 class HydropowerPlant:
-
+    """
+    To measure the hydropower production of hydropower plants
+    """
     def __init__(self, reservoir, identifier=None, release_share=None):
-        
+        """
+
+        Parameters
+        ----------
+        reservoir
+        identifier ("North", "South" in model_zambezi)
+        release_share (+/- 0.5)
+        """
         self.reservoir = reservoir
         self.identifier = identifier
         self.release_share = release_share
@@ -16,7 +25,18 @@ class HydropowerPlant:
 
     def calculate_hydropower_production(self, actual_release, reservoir_level,
         nu_of_days):
-        
+        """
+
+        Parameters
+        ----------
+        actual_release
+        reservoir_level
+        nu_of_days
+
+        Returns
+        -------
+
+        """
         if self.release_share != None: actual_release *= self.release_share
 
         m3_to_kg_factor = 1000

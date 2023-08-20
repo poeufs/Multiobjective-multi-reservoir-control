@@ -22,9 +22,9 @@ MEF_VictoriaFalls: VICTORIA FALLS monthly minimum environmental flow requirement
 
 MEF_Delta: DELTA monthly minimum environmental flow requirement (MEF) [m^3/sec] from the World Bank - Volume 3 (2010). The first value corresponds to JANUARY.
 
-min_max_rel_Kariba: min-MAX storage [m3] (Zambezi River Authority) and MAX RELEASE [m3/sec] (Gandolfi et al) for Kariba reservoir. 
+min_max_release_Kariba: min-MAX storage [m3] (Zambezi River Authority) and MAX RELEASE [m3/sec] (Gandolfi et al) for Kariba reservoir.
 
-min_max_rel_CahoraBassa: min-MAX storage [m3] (Hidroelectrica de Cahora Bassa) and MAX RELEASE [m3/sec] (Gandolfi et al) for Cahora Bassa reservoir.
+min_max_release_CahoraBassa: min-MAX storage [m3] (Hidroelectrica de Cahora Bassa) and MAX RELEASE [m3/sec] (Gandolfi et al) for Cahora Bassa reservoir.
 
 INFLOW: monthly inflow [m^3/sec]. The first value corresponds to JANUARY.
 
