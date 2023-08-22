@@ -19,7 +19,8 @@ class Reservoir:
     level_to_storage_rel : np.array (2x...)
         (unit) xUnit -> yUnit
         Vectors of water level versus corresponding water storage
-    level_to_surface_rel : np.array (2x...)
+    
+     : np.array (2x...)
         (unit) xUnit -> yUnit
         Vectors of water level versus corresponding surface area
     average_cross_section : float
@@ -63,13 +64,15 @@ class Reservoir:
         self.model = model
 
         data_directory = "../data/"
-        self.evap_rates = np.loadtxt(f"{data_directory}evap_{name}.txt")
+        acronyms = {"itezhitezhi":"ITT", "kafuegorgeupper":"KGU",
+        "kafuegorgelower":"KGL", "kariba":"KA", "cahorabassa":"CB"}
+        self.evap_rates = np.loadtxt(f"{data_directory}evap_{acronyms[self.name]}.txt")
         self.rating_curve = np.loadtxt\
             (f"{data_directory}min_max_release_{name}.txt")
         self.level_to_storage_rel = np.loadtxt\
-            (f"{data_directory}lsto_rel_{name}.txt")
+            (f"{data_directory}lsv_rel_{name}.txt")   #(f"{data_directory}lsto_rel_{name}.txt")  
         self.level_to_surface_rel = np.loadtxt\
-            (f"{data_directory}lsur_rel_{name}.txt")
+           (f"{data_directory}lsv_rel_{name}.txt")
         self.average_cross_section = None # To be set in the model main file
         self.initial_storage = None # To be set in the model main file
         self.target_hydropower_production = None # To be set if obj exists
@@ -103,7 +106,8 @@ class Reservoir:
         else:
             s = h*self.average_cross_section
         return s
-
+    #comment this one out
+    
     def level_to_surface(self, h):
         # interpolation when lsur_rel exists
         if(self.level_to_surface_rel.size>0):
@@ -113,7 +117,7 @@ class Reservoir:
         else:
             a = self.average_cross_section
         return a
-
+    
     def integration(self, nu_of_days, policy_release_decision,
         net_secondly_inflow, current_month):
         """Converts the flows of the reservoir into storage. Time step

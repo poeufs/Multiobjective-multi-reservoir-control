@@ -1,0 +1,24 @@
+evap_ITT.txt file to evap_evap_itezhitezhi.txt convert
+
+
+2) Line 70 in reservoir  to      (f"{data_directory}lsv_rel_{name}.txt")
+        data_directory = "../data/"
+        self.evap_rates = np.loadtxt(f"{data_directory}evap_{name}.txt")
+        self.rating_curve = np.loadtxt\
+            (f"{data_directory}min_max_release_{name}.txt")
+        self.level_to_storage_rel = np.loadtxt\
+            (f"{data_directory}lsto_rel_{name}.txt")
+        self.level_to_surface_rel = np.loadtxt\
+            (f"{data_directory}lsur_rel_{name}.txt")
+        self.average_cross_section = None # To be set in the model main file
+        self.initial_storage = None # To be set in the model main file
+        self.target_hydropower_production = None # To be set if obj exists
+        self.storage_vector = np.empty(0)
+        self.level_vector = np.empty(0)
+        self.release_vector = np.empty(0)
+        self.hydropower_plants = list()
+        self.actual_hydropower_production = np.empty(0)
+        self.hydropower_deficit = np.empty(0)
+
+3) change evap_KG_KF.txt to evap_KGU (for reference check c code model zanbezi.cpp line 53, KAFUE GORGE UPPER reservoir)
+4) number_of_objectives = len(self.irr_districts) + len(self.reservoirs) to model_reservoir
