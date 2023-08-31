@@ -69,8 +69,13 @@ class Reservoir:
         data_directory = "../data/"
         acronyms = {"itezhitezhi":"ITT", "kafuegorgeupper":"KGU",
         "kafuegorgelower":"KGL", "kariba":"KA", "cahorabassa":"CB"}
-        self.evap_rates = np.loadtxt(f"{data_directory}evap_{acronyms[Reservoir.__name__]}.txt")
+        self.evap_rates = np.loadtxt(f"{data_directory}evap_{acronyms[self.name]}.txt")
         #end
+
+        # original
+        # self.evap_rates = np.loadtxt(f"{data_directory}evap_{name}.txt")
+
+
 
         self.rating_curve = np.loadtxt\
             (f"{data_directory}min_max_release_{name}.txt")
