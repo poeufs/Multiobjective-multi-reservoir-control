@@ -193,7 +193,6 @@ def inverse_quadratic_rbf_lit(rbf_input, centers, radii, weights):
 
     return output
 
-
 def inverse_multiquadric_rbf(rbf_input, centers, radii, weights):
     """
 

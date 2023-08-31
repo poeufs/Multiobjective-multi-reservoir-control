@@ -2,7 +2,7 @@
 import numpy as np
 
 class irrigation_policy:
-    """irrigation policy class represents different irrigation policies"""
+    """irrigation policy class represents different irrigation policies for all the irrigation districts"""
 
     def __init__(self, n_inputs, n_outputs, kw_dict):
         """
@@ -66,3 +66,6 @@ class irrigation_policy:
 
     def setMaxInput(self, pV):
         self.irr_input_max = np.array(pV)
+
+#irrigation_policy(2,2,1)
+
