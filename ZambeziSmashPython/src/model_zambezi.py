@@ -10,7 +10,7 @@ from catchment import Catchment
 from irrigation_district import IrrigationDistrict
 from hydropower_plant import HydropowerPlant
 from smash import Policy
-
+print("damla")
 class ModelZambezi:
     """
     Model class consists of three major functions. First, static
@@ -21,7 +21,7 @@ class ModelZambezi:
     handles the state transformation via mass-balance equation
     calculations iteratively.
     """
-
+    
     def __init__(self):
         """
         Creating the static objects of the model including the
@@ -200,8 +200,8 @@ class ModelZambezi:
             # Integration of flows to storages
             self.reservoirs["kafuegorgeupper"].integration(
                 nu_of_days, decision_dict["kafuegorgeupper"],
-                self.catchments["KafueFlats"].inflow[t] + itt_release - \
-                self.irr_districts["4"].received_flow[-1],moy)
+                self.catchments["KafueFlats"].inflow[t].any() + itt_release - \
+                self.irr_districts["4"].received_flow[-1].any(),moy)
 
             self.reservoirs["kafuegorgelower"].integration(
                 nu_of_days, decision_dict["kafuegorgelower"],
@@ -295,6 +295,8 @@ class ModelZambezi:
                     reservoir.hydropower_deficit, max(0,
                     reservoir.target_hydropower_production[-1] - hydropower_production)
                 )
+        #number_of_objectives = len(self.irr_districts) + len(self.reservoirs)
+        #damla=print("number of objectives: ", number_of_objectives)
             
     @staticmethod
     def squared_deficit_from_target(realisation, target):

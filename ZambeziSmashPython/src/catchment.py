@@ -1,4 +1,4 @@
-# Catchment class
+# Catchement class
 
 import numpy as np
 import sys,os
@@ -7,7 +7,7 @@ sys.path.append(os.path.realpath('..'))
 
 
 class Catchment:
-   """Catchments have a name and inflow (from data file)"""
+
    def __init__(self, name, model):
         # Explanation placeholder
         self.name = name
